@@ -1,0 +1,24 @@
+name: RealBots
+version: '${project.version}'
+main: dev.realbots.RealBotsPlugin
+api-version: '1.20'
+description: Real fake players - tab list entry plus a real body in the world, with GUI.
+authors: [RealBots]
+libraries:
+  - net.bytebuddy:byte-buddy:1.14.18
+
+commands:
+  realbots:
+    description: Manage fake players
+    aliases: [rb, bot, bots]
+    usage: /<command> [gui|spawn|spawnmany|remove|removeall|list|tp|bring|say|cmd|toggle|reload]
+
+permissions:
+  realbots.use:
+    description: Open the GUI and list bots
+    default: op
+  realbots.admin:
+    description: Spawn, remove and control bots
+    default: op
+    children:
+      realbots.use: true

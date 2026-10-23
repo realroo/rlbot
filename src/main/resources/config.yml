@@ -1,0 +1,73 @@
+# RealBots configuration. Messages use MiniMessage format.
+
+settings:
+  max-bots: 50
+  # Bring saved bots back when the server restarts
+  persist-on-restart: true
+  # Hide the vanilla join/quit messages for bots
+  hide-join-message: false
+  hide-quit-message: false
+  # Bots fall, hop and stand on blocks (simple server-side physics)
+  gravity: true
+  # New bots are invisible (still shown in the tab list). Per bot: GUI toggle or /rb toggle <bot> invisible
+  invisible-by-default: false
+  # Respawn bots automatically after they die
+  auto-respawn: true
+  # Look at the nearest real player within this many blocks
+  look-range: 8.0
+  # Random chat lines, one every chat-interval-seconds for bots with "chat" enabled
+  chat-interval-seconds: 60
+  chat-messages:
+    - "hello everyone!"
+    - "anyone up for a game?"
+    - "gg"
+    - "nice build"
+    - "what are you guys doing?"
+
+spawn:
+  # false = a new bot appears where the player who ran the command stands
+  # true  = every new bot appears at the point below
+  # Easiest way to fill this in: stand where you want and run /rb setspawn
+  # (/rb clearspawn turns it off again)
+  enabled: false
+  world: world
+  x: 0.5
+  y: 64.0
+  z: 0.5
+  yaw: 0.0
+  pitch: 0.0
+
+skins:
+  # Use a skin named exactly like the bot (works for real Minecraft usernames)
+  use-bot-name: true
+  # Pick a random skin from this list when use-bot-name is off or no skin was given
+  random-pool: [Notch, jeb_, Dinnerbone, Technoblade, Dream]
+
+names:
+  # Used by /rb spawnmany
+  random-prefix: "Bot_"
+
+messages:
+  prefix: "<gradient:#4ade80:#22d3ee><bold>RealBots</bold></gradient> <dark_gray>»</dark_gray> "
+  no-permission: "<red>You do not have permission."
+  players-only: "<red>This needs a player."
+  spawned: "<green>Spawned bot <white>{name}</white>."
+  removed: "<yellow>Removed bot <white>{name}</white>."
+  removed-all: "<yellow>Removed <white>{count}</white> bots."
+  not-found: "<red>No bot named <white>{name}</white>."
+  already-exists: "<red>A player named <white>{name}</white> is already online."
+  invalid-name: "<red>Names must be 3-16 characters: letters, numbers, underscore."
+  max-reached: "<red>Bot limit reached ({max})."
+  spawn-failed: "<red>Could not spawn the bot: {error}"
+  toggled: "<gray>{name}: <white>{feature}</white> is now <white>{state}</white>."
+  teleported: "<green>Teleported."
+  said: "<gray>{name} says: <white>{text}</white>"
+  reloaded: "<green>Config reloaded."
+  spawn-set: "<green>Bot spawn point set to your position. New bots will appear here."
+  spawn-cleared: "<yellow>Bot spawn point disabled. New bots appear at the player who spawns them."
+  prompt-name: "<yellow>Type the new bot's name in chat <gray>(or 'cancel')."
+  prompt-say: "<yellow>Type what {name} should say <gray>(or 'cancel')."
+  prompt-cmd: "<yellow>Type the command {name} should run, no slash <gray>(or 'cancel')."
+  prompt-skin: "<yellow>Type the skin (player name) for {name} <gray>(or 'cancel')."
+  cancelled: "<gray>Cancelled."
+  nms-error: "<red>This server version is not supported by the bot engine: {error}"
